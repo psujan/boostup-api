@@ -7,21 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.5.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Auth\" />
+    <Folder Include="Controllers\Employee\" />
     <Folder Include="Entities\Dtos\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Services\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Employee\" />
   </ItemGroup>
 
 </Project>
