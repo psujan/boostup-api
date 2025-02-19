@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoostUpRoster", "BoostUpRoster\BoostUpRoster.csproj", "{7C2F7F95-7116-4281-9A75-0AFC2C8417D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Boostup.API", "BoostUpRoster\Boostup.API.csproj", "{7C2F7F95-7116-4281-9A75-0AFC2C8417D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
