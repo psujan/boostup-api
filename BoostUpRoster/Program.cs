@@ -2,11 +2,17 @@ using Boostup.API.Data;
 using Boostup.API.Data.Seeder;
 using Boostup.API.Services;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//configure serilog
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File("Logs/log-.txt", rollingInterval: RollingInterval.Month)
+    .CreateLogger();
+builder.Host.UseSerilog();
+
 // Add services to the container.
-Console.WriteLine(builder.Configuration.GetConnectionString("DefaultConnectionString"));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -14,6 +20,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 builder.Services.RegisterService(builder);
 
 var app = builder.Build();
+//Log http request automatically
+//app.UseSerilogRequestLogging(); 
 
 // Configure the HTTP request pipeline.
 /*if (app.Environment.IsDevelopment())
@@ -48,5 +56,7 @@ if (args.Contains("seed"))
 }
 
 app.Run();
+
+Log.CloseAndFlush();
 
 
